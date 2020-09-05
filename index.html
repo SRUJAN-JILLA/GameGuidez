@@ -119,7 +119,40 @@
       </li>
     </ul>
   </div>
-  
+  <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-app.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/7.19.1/firebase-analytics.js"></script>
+
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyApeor4kMFqoRvynFxGYH9G41n5Cj9uCVc",
+    authDomain: "gameguidez-ee83a.firebaseapp.com",
+    databaseURL: "https://gameguidez-ee83a.firebaseio.com",
+    projectId: "gameguidez-ee83a",
+    storageBucket: "gameguidez-ee83a.appspot.com",
+    messagingSenderId: "621382345513",
+    appId: "1:621382345513:web:3904cea921d756c3b4cd38",
+    measurementId: "G-JCX2Z65G4Y"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+  firebase.analytics();
+
+  //make auth and firestore references
+  const auth = firebase.auth();
+  const db = firebase.firestore();
+
+  //update firestore settings
+  db.settings({timestampsInSnapshots: true});
+
+</script>
+
   <!-- Compiled and minified JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
   <script src="scripts/auth.js"></script>
