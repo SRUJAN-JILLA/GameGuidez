@@ -4,6 +4,7 @@ const loggedOutLinks = document.querySelectorAll(".logged-out");
 const loggedInLinks = document.querySelectorAll(".logged-in");
 const accountDetails = document.querySelector(".account-details");
 
+//Account section
 const setupUI = (user) => {
   if (user) {
     // account info

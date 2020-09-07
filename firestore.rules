@@ -1,0 +1,17 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+  
+    //match logged in user doc in users collection
+   match /users/{userId}{
+   allow create: if request.auth.uid !=null;
+   allow read: if request.auth.uid == userId;
+   }
+    
+    //match docs in the guides collection
+    //making secure data only when one loggin & only then it shows guides data
+    match /guides/{guideId}{
+    allow read, write: if request.auth.uid != null;
+    }
+  }
+}
