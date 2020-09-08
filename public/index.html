@@ -146,7 +146,7 @@
   //make auth and firestore references
   const auth = firebase.auth();
   const db = firebase.firestore();
-  const functions = firebase.functions();
+  var functions = firebase.app().functions('asia-south1');
 
 
 </script>
